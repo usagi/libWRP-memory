@@ -1,4 +1,4 @@
-{ "name"  : "libWRP-log"
+{ "name"  : "libWRP-memory"
 , "files" : [ { "git": 1 } ]
 , "build" :
   { "directory" : "build"
