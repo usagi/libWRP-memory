@@ -8,14 +8,14 @@ namespace wonder_rabbit_project
   {
 
     template<class T_derived, class T_base = void>
-    class enable_shared_from_this_wrap: public T_base
+    class enable_shared_from_this_wrap: virtual public T_base
     {
     public:
       std::shared_ptr<T_derived> shared_from_this()
-      { return std::static_pointer_cast<T_derived>(T_base::shared_from_this_wrap()); }
+      { return std::dynamic_pointer_cast<T_derived>(T_base::shared_from_this_wrap()); }
       
       std::shared_ptr<T_derived const> shared_from_this() const
-      { return std::static_pointer_cast<T_derived const>(T_base::shared_from_this_wrap()); }
+      { return std::dynamic_pointer_cast<T_derived const>(T_base::shared_from_this_wrap()); }
     };
     
     template<class T_derived>
